@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listagem Atos Cepe</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+</head>
+<body>
+
+    <div class="container">
+        <h1>Lista dos atos do cepe</h1>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Numero</th>
+                        <th scope="col">Ano</th>
+                        <th scope="col">Ementa</th>
+                        <th scope="col">Setor</th>
+                        <th scope="col">Classificação</th>
+                        <th scope="col">Resposta</th>
+                        <th scope="col">Data envio</th>
+                        <th scope="col">Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($atos as $ato)
+                    <tr>
+                        <th scope="row">{{ $ato->id }}</th>
+                        <td>{{ $ato->nome }}</td>
+                        <td>{{ $ato->ano }}</td>
+                        <td>{{ $ato->ementa }}</td>
+                        <td>{{ $ato->setor }}</td>
+                        <td>{{ $ato->classificacao }}</td>
+                        <td>{{ $ato->data_envio }}</td>
+                        <td><a href="{{route('atos.show', $ato->id)}}" class="btn btn-info btn-sm text-white">Visualizar</a></td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>    
+    </body>
+</html>
