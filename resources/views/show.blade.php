@@ -8,8 +8,10 @@
     <title>Resolução {{ $ato->numero }}</title>
 </head>
 <body>
-<div class="container">
+
+<div class="container">        
         <h1>Resolução nº {{ $ato->numero }}/{{ $ato->ano }}</h1>
+        <a href="/" class="btn btn-info btn-sm text-white">Voltar</a>
             <table class="table">
                 <thead class="text-center">
                     <tr>
