@@ -4,14 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listagem Atos Cepe</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
+    <title>Resolução {{ $ato->numero }}</title>
 </head>
 <body>
-
-    <div class="container">
-        <h1>Lista das Resoluções do Cepe</h1>
+<div class="container">
+        <h1>Resolução nº {{ $ato->numero }}/{{ $ato->ano }}</h1>
             <table class="table">
                 <thead class="text-center">
                     <tr>
@@ -26,20 +24,22 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($atos as $ato)
-                    <tr>                        
+                    <tr>
                         <td>{{ $ato->numero }}</td>
                         <td>{{ $ato->ano }}</td>
                         <td>{{ $ato->ementa }}</td>
-                        <td>{{ $ato->setor }}</td>
-                        <td>{{ $ato->resposta }}</td>
+                        <td>{{ $ato->setor }}</td>                        
                         <td>{{ $ato->classificacao }}</td>
+                        <td>{{ $ato->resposta }}</td>
                         <td>{{ $ato->data_envio }}</td>
-                        <td><a href="{{route('atos.show', $ato->id)}}" class="btn btn-info btn-sm text-white">Visualizar</a></td>
+                        <td><a href="#" class="btn btn-warning btn-sm text-white">Editar</a>
+                            <a href="#" class="btn btn-danger btn-sm text-white">Excluir</a>
+                    </td>
                     </tr>
-                    @endforeach
+          
                 </tbody>
             </table>
         </div>    
     </body>
+</body>
 </html>

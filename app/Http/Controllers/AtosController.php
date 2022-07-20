@@ -19,7 +19,14 @@ class AtosController extends Controller
 
     public function show($id)
     {
-        $ato = Atos::find($id)->get();
+        
+
+        if(!$ato = Atos::find($id)){
+            return redirect()->route('index');
+
+        }
+
+        return view('show', compact('ato'));
 
     }
 
