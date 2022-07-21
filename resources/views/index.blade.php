@@ -12,6 +12,7 @@
 
     <div class="container">
         <h1>Lista das Resoluções do Cepe</h1>
+        <a href="/criar" class="btn btn-info btn-sm text-white">Cadastrar</a>
             <table class="table">
                 <thead class="text-center">
                     <tr>
@@ -27,7 +28,7 @@
                 </thead>
                 <tbody>
                     @foreach($atos as $ato)
-                    <tr>                        
+                    <tr class="text-center">                        
                         <td>{{ $ato->numero }}</td>
                         <td>{{ $ato->ano }}</td>
                         <td>{{ $ato->ementa }}</td>

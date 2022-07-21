@@ -13,11 +13,10 @@ class Atos extends Model
         'numero', 
         'ano', 
         'ementa',
-        'setor', 
+        'setor',
         'classificacao',
+        'resposta',        
         'data_envio',
-
-
     ];
 }
 
