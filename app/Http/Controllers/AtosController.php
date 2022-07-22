@@ -65,5 +65,27 @@ class AtosController extends Controller
         return redirect()->route('atos.index');
     }
 
+    public function edit($id)
+    {
+        if(!$ato = $this->model->find($id))
+        {
+            return redirect()->route('atos.index');
+        }
+        return view('edit', compact('ato'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        if(!$ato = $this->model->find($id))
+        {
+            return redirect()->route('atos.index');
+        }
+        $data = $request->all();
+        $ato->update($data);
+
+        return redirect()->route('atos.index');
+
+    }
+
 
 }
