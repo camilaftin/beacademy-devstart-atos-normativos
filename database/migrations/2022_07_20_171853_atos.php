@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('atos', function (Blueprint $table) {
             $table->id();
-            $table->string('numero');
-            $table->string('ano');
+            $table->int('numero');
+            $table->int('ano');
             $table->string('ementa');
             $table->string('setor');    
             $table->string('classificacao');

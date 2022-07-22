@@ -18,7 +18,8 @@ class AtosController extends Controller
 
     public function index()
     {
-        $atos = Atos::all();
+        
+        $atos = Atos::paginate(7);
         return view('index', compact('atos'));
     }
 

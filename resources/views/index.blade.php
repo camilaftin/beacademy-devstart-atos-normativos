@@ -41,6 +41,9 @@
                     @endforeach
                 </tbody>
             </table>
+            <div class="pagination justify-content-center">
+            {{$atos->links('pagination::bootstrap-5')}}
+            </div>
         </div>    
     </body>
 </html>
