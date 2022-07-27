@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edição {{$ato->numero}}</title>
+    <title>Edição {{$ato->numero}}</title>-->
 <!---------------------------------------------------------------------------->
 
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -95,45 +95,51 @@
 </style>
 
 </head>
+
 <body>
-<section class="get-in-touch">
-  <h1 class="title">Editar Resolução {{$ato->numero}}</h1>
-  <form class="contact-form row" action="{{route('atos.update', $ato->id)}}" method="POST">
-    @method('PUT')  
-    @csrf
-    <div class="form-field col-lg-6">
-      <input id="numero" name="numero" class="input-text js-input" type="number" value="{{$ato->numero}}" required>
-      <label class="label" for="numero">Numero</label>
-    </div>
-    <div class="form-field col-lg-6 ">
-      <input id="ano" name="ano" class="input-text js-input" type="number" step="0.01" min="0" value="{{$ato->ano}}" required>
-      <label class="label" for="ano">Ano</label>
-    </div>
-    <div class="form-field col-lg-6 ">
-      <input id="setor" name="setor" class="input-text js-input" type="text" value="{{$ato->setor}}" required>
-      <label class="label" for="setor">Setor</label>
-    </div>
-    <div class="form-field col-lg-6 ">
-      <input id="classificacao" name="classificacao" class="input-text js-input" type="text" value="{{$ato->classificacao}}" required>
-      <label class="label" for="classificacao">Classificação</label>
-    </div>
-    <div class="form-field col-lg-6">
-      <input id="resposta" name="resposta" class="input-text js-input" type="text" value="{{$ato->resposta}}" required>
-      <label class="label" for="resposta">Resposta</label>
-    </div>
-    <div class="form-field col-lg-6">
-      <input id="data_envio" name="data_envio" class="input-text js-input" type="text" value="{{$ato->data_envio}}" required>
-      <label class="label" for="data_envio">Data Envio</label>
-    </div>
-    <div class="form-field col-lg-12">
-      <input id="ementa" name="ementa" class="input-text js-input" type="text" value="{{$ato->ementa}}" required>
-      <label class="label" for="ementa">Ementa</label>
-    </div>    
-    <div class="form-field col-lg-12 d-grid gap-2 d-md-flex justify-content-md-end">
-      <button type="submit" class="submit-btn">Atualizar</button>
-    </div>
-  </form>
-</section>
+  <section class="get-in-touch">
+    <h1 class="title">Editar Resolução {{$ato->numero}}</h1>
+    <form class="contact-form row" action="{{route('atos.update', $ato->id)}}" method="POST">
+      @method('PUT')
+      @csrf
+      <div class="form-field col-lg-6">
+        <input id="numero" name="numero" class="input-text js-input" type="number" value="{{$ato->numero}}" required>
+        <label class="label" for="numero">Numero</label>
+      </div>
+      <div class="form-field col-lg-6 ">
+        <input id="ano" name="ano" class="input-text js-input" type="number" step="0.01" min="0" value="{{$ato->ano}}"
+          required>
+        <label class="label" for="ano">Ano</label>
+      </div>
+      <div class="form-field col-lg-6 ">
+        <input id="setor" name="setor" class="input-text js-input" type="text" value="{{$ato->setor}}" required>
+        <label class="label" for="setor">Setor</label>
+      </div>
+      <div class="form-field col-lg-6 ">
+        <input id="classificacao" name="classificacao" class="input-text js-input" type="text"
+          value="{{$ato->classificacao}}" required>
+        <label class="label" for="classificacao">Classificação</label>
+      </div>
+      <div class="form-field col-lg-6">
+        <input id="resposta" name="resposta" class="input-text js-input" type="text" value="{{$ato->resposta}}"
+          required>
+        <label class="label" for="resposta">Resposta</label>
+      </div>
+      <div class="form-field col-lg-6">
+        <input id="data_envio" name="data_envio" class="input-text js-input" type="text" value="{{$ato->data_envio}}"
+          required>
+        <label class="label" for="data_envio">Data Envio</label>
+      </div>
+      <div class="form-field col-lg-12">
+        <input id="ementa" name="ementa" class="input-text js-input" type="text" value="{{$ato->ementa}}" required>
+        <label class="label" for="ementa">Ementa</label>
+      </div>
+      <div class="form-field col-lg-12 d-grid gap-2 d-md-flex justify-content-md-end">
+        <button type="submit" class="submit-btn">Atualizar</button>
+      </div>
+    </form>
+  </section>
 
 </body>
+
 </html>
