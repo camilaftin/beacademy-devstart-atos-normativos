@@ -103,9 +103,10 @@
 
     <div class="form-group">
       <div class="d-flex justify-content-center" style="padding: 40px"">
-      botao de excluir    
-      botao de editar
-    </div></div>
+        <a href="{{route('atos.destruir', $ato->id)}}" class="btn btn-lg btn-danger btn-icon-split">Excluir</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+        <a href="{{route('atos.edit', $ato->id)}}" class="btn btn-lg btn-warning btn-icon-split">Editar</a>
+      </div>
+    </div>
   </div>
 
 
