@@ -1,5 +1,6 @@
 @include('layout.head')
 
+
 <body>
   @include('layout.navbar')
 
@@ -55,3 +56,5 @@
       </div>
     </div>
   </div>
+
+</body>

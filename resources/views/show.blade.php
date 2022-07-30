@@ -103,9 +103,11 @@
 
     <div class="form-group">
       <div class="d-flex justify-content-center" style="padding: 40px"">
-      botao de excluir    
-      botao de editar
-    </div></div>
+      <a href=" {{route('atos.edit', $ato->id)}}" class="btn btn-info btn-sm text-white">botao de editar</a>
+        botao de excluir
+
+      </div>
+    </div>
   </div>
 
 
