@@ -12,7 +12,19 @@
             <div class="text-center">
               <h1 class="h4 text-gray-900 mb-4">Cadastrar Resolução</h1>
             </div>
-            <form class="user" action="{{route('atos.store')}}" method="POST">
+
+            @if($errors->any())
+            <div class="alert alert-danger" role="alert">
+              @foreach($errors->all() as $error)
+              {{ $error }}<br>
+              @endforeach
+            </div>
+            @endif
+
+
+
+
+            <form class="user" action="{{route('atos.store')}}" method="POST" enctype="multipart/form-data">
               @csrf
               <div class="form-group row">
                 <div class="col-sm-6 mb-3 mb-sm-0">
@@ -46,6 +58,9 @@
                 <input type="text" class="form-control form-control-user" id="ementa" name="ementa"
                   placeholder="Ementa">
               </div>
+              <div class="form-group justify-center">
+                <input type="file" class="form-control form-control-user" id="image" name="image" placeholder="image">
+              </div>
               <div class="form-field col-lg-12 d-grid gap-2 d-md-flex justify-content-md-end">
                 <button type="submit" class="btn btn-lg btn-success btn-icon-split"><span
                     class="text-white-50"></span>Confirmar</button>
@@ -56,5 +71,4 @@
       </div>
     </div>
   </div>
-
 </body>

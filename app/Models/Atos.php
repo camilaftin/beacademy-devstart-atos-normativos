@@ -10,16 +10,13 @@ class Atos extends Model
     use HasFactory;
 
     protected $fillable = [
-        'numero', 
-        'ano', 
+        'image',
+        'numero',
+        'ano',
         'ementa',
         'setor',
         'classificacao',
-        'resposta',        
+        'resposta',
         'data_envio',
     ];
 }
-
-
-
-

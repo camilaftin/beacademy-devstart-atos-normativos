@@ -3,7 +3,7 @@
 <body>
   @include('layout.navbar')
   <div class="container">
-    <h1>Lista das Resoluções do Cepe</h1>
+    <h1 class="h4 text-gray-900 mb-4">Lista Resoluções</h1>
     <!--<a href="/criar" class="btn btn-info btn-sm text-white">Cadastrar</a>-->
     <div class="card shadow mb-4">
       <div class="card-header py-3">
@@ -14,6 +14,7 @@
           <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
             <thead>
               <tr class="text-center">
+                <th>Imagem</th>
                 <th>Numero</th>
                 <th>Ano</th>
                 <th>Ementa</th>
@@ -27,6 +28,8 @@
             <tbody>
               @foreach($atos as $ato)
               <tr class="text-center">
+                <td><img width="100px" height="100px" src="{{ asset('storage/' . $ato->image)}}"
+                    class="rounded mx-auto d-block"> </td>
                 <td>{{ $ato->numero }}</td>
                 <td>{{ $ato->ano }}</td>
                 <td>{{ $ato->ementa }}</td>
@@ -50,64 +53,6 @@
         </div>
       </div>
     </footer>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!--<table class="table">
-      <thead class="text-center">
-        <tr>
-          <th scope="col">Numero</th>
-          <th scope="col">Ano</th>
-          <th scope="col">Ementa</th>
-          <th scope="col">Setor</th>
-          <th scope="col">Classificação</th>
-          <th scope="col">Resposta</th>
-          <th scope="col">Data envio</th>
-          <th scope="col">Ações</th>
-        </tr>
-      </thead>
-      <tbody>
-        @foreach($atos as $ato)
-        <tr class="text-center">
-          <td>{{ $ato->numero }}</td>
-          <td>{{ $ato->ano }}</td>
-          <td>{{ $ato->ementa }}</td>
-          <td>{{ $ato->setor }}</td>
-          <td>{{ $ato->resposta }}</td>
-          <td>{{ $ato->classificacao }}</td>
-          <td>{{ $ato->data_envio }}</td>
-          <td><a href="{{route('atos.show', $ato->id)}}" class="btn btn-info btn-sm text-white">Visualizar</a></td>
-        </tr>
-        @endforeach
-      </tbody>
-    </table>
-    <div class="pagination justify-content-center">
-      {{$atos->links('pagination::bootstrap-5')}}
-    </div>
-  </div>
-  <footer class="footer">
-    <div class="container">
-      By Camila</br>
-      Programa DevStart</br>
-      Be academy
-    </div>
-  </footer>-->
-
 </body>
 
 </html>

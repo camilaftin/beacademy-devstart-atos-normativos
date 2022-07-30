@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Atos;
-use App\Http\Requests\StoreUserRequest;
+use App\Http\Requests\StoreUpdateAtosFormRequest;
 use Illuminate\Http\Request;
 
 class AtosController extends Controller
@@ -18,15 +18,14 @@ class AtosController extends Controller
 
     public function index()
     {
-        
+
         $atos = Atos::paginate(7);
         return view('index', compact('atos'));
     }
 
     public function show($id)
     {
-        if(!$ato = Atos::find($id))
-        {
+        if (!$ato = Atos::find($id)) {
             return redirect()->route('index');
         }
         return view('show', compact('ato'));
@@ -37,7 +36,7 @@ class AtosController extends Controller
         return view('criar');
     }
 
-    public function store(Request $request)
+    public function store(StoreUpdateAtosFormRequest $request)
     {
         /*$ato = new Atos;
         $ato->numero = $request->numero;
@@ -50,16 +49,17 @@ class AtosController extends Controller
         $ato->save();*/
 
         $data = $request->all();
+        $file = $request['image'];
+        $path = $file->store('itens', 'public');
+        $data['image'] = $path;
+
         $this->model->create($data);
-
         return redirect()->route('atos.index');
-
     }
 
     public function destruir($id)
     {
-        if(!$ato = $this->model->find($id))
-        {
+        if (!$ato = $this->model->find($id)) {
             return redirect()->route('atos.index');
         }
         $ato->delete();
@@ -68,25 +68,22 @@ class AtosController extends Controller
 
     public function edit($id)
     {
-        if(!$ato = $this->model->find($id))
-        {
+        if (!$ato = $this->model->find($id)) {
             return redirect()->route('atos.index');
         }
         return view('edit', compact('ato'));
     }
 
-    public function update(Request $request, $id)
+    public function update(StoreUpdateAtosFormRequest $request, $id)
     {
-        if(!$ato = $this->model->find($id))
-        {
+        if (!$ato = $this->model->find($id)) {
             return redirect()->route('atos.index');
         }
         $data = $request->all();
+        if ($request->hasFile('image')) {
+            $data['image'] = $request->file('image')->store('itens', 'public');
+        }
         $ato->update($data);
-
-        return redirect()->route('atos.index');
-
+        return redirect()->route('atos.index')->with('success', 'Ato atualizado com sucesso!');
     }
-
-
 }

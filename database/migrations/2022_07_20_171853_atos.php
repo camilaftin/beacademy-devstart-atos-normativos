@@ -15,13 +15,15 @@ return new class extends Migration
     {
         Schema::create('atos', function (Blueprint $table) {
             $table->id();
+            $table->string('image')->nullable();
             $table->integer('numero');
             $table->integer('ano');
             $table->string('ementa');
-            $table->string('setor');    
+            $table->string('setor');
             $table->string('classificacao');
             $table->string('resposta');
             $table->string('data_envio');
+            $table->timestamps();
         });
     }
 
