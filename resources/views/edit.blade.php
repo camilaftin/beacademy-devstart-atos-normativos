@@ -18,8 +18,7 @@
     </div>
     @endif
 
-    <form class="contact-form row" action="{{route('atos.update', $ato->id)}}" method="POST"
-      enctype="multipart/form-data">
+    <form class="contact-form row" action="{{route('atos.update', $ato->id)}}" method="POST" enctype="multipart/form-data">
       @method('PUT')
       @csrf
       <div class="form-field col-lg-6">
@@ -35,8 +34,7 @@
         <label class="label" for="setor">Setor</label>
       </div>
       <div class="form-field col-lg-6 ">
-        <input id="classificacao" name="classificacao" class="input-text js-input" type="text"
-          value="{{$ato->classificacao}}">
+        <input id="classificacao" name="classificacao" class="input-text js-input" type="text" value="{{$ato->classificacao}}">
         <label class="label" for="classificacao">Classificação</label>
       </div>
       <div class="form-field col-lg-6">
@@ -57,6 +55,7 @@
       </div>
       <div class="form-field col-lg-12 d-grid gap-2 d-md-flex justify-content-md-end">
         <button type="submit" class="submit-btn">Atualizar</button>
+        <a href="{{route('atos.index')}}" class="submit-btn text-center" style="text-decoration: none">Voltar</a>
       </div>
     </form>
   </section>

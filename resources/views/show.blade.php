@@ -98,8 +98,7 @@
             <h6 class="m-0 font-weight-bold text-primary">Resolução nº {{ $ato->numero }}/{{ $ato->ano }}</h6>
           </div>
           <div class="card-body">
-            <td><img width="200px" height="200px" src="{{ asset('storage/' . $ato->image)}}"
-                class="rounded mx-auto d-block"> </td>
+            <td><img width="200px" height="200px" src="{{ asset('storage/' . $ato->image)}}" class="rounded mx-auto d-block"> </td>
           </div>
         </div>
       </div>
@@ -125,10 +124,11 @@
       <form action=" {{ route('atos.destruir', $ato->id)}}" method="POST">
         @method('DELETE')
         @csrf
-        <button type='submit' class="btn btn-lg btn-danger btn-icon-split" role="button" aria-pressed="true"
-          style="width:100%">Excluir</button>
+        <button type='submit' class="btn btn-lg btn-danger btn-icon-split" role="button" aria-pressed="true" style="width:100%">Excluir</button>
         </form>
-        <a href="{{route('atos.edit', $ato->id)}}" class="btn btn-lg btn-warning btn-icon-split">Editar</a>
+        <div class="col-lg-1 d-md-flex justify-content-md-end">
+          <a href="{{route('atos.edit', $ato->id)}}" class="btn btn-lg btn-warning btn-icon-split">Editar</a>
+        </div>
       </div>
     </div>
   </div>

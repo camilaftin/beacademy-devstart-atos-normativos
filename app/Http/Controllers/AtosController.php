@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Atos;
 use App\Http\Requests\StoreUpdateAtosFormRequest;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Storage;
+use PDF;
+
 
 class AtosController extends Controller
 {
@@ -16,10 +19,13 @@ class AtosController extends Controller
 
 
 
-    public function index()
+    public function index(Request $request)
     {
 
-        $atos = Atos::paginate(7);
+        $atos = $this->model->getAtos(
+            $request->search ?? ''
+        );
+        //$atos = Atos::paginate(7);
         return view('index', compact('atos'));
     }
 
@@ -85,5 +91,16 @@ class AtosController extends Controller
         }
         $ato->update($data);
         return redirect()->route('atos.index')->with('success', 'Ato atualizado com sucesso!');
+    }
+
+    public function criarPDF()
+    {
+        $atos = Atos::all();
+        dd($atos);
+        //$pdf = PDF::loadView('index', compact('atos'));
+        //return $pdf->download('atos.pdf');
+        //$pdf = PDF::loadView('atos.index', compact('atos'));
+
+        //return $pdf->setPaper('a4')->download('todos_atos.pdf');
     }
 }

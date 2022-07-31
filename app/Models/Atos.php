@@ -19,4 +19,20 @@ class Atos extends Model
         'resposta',
         'data_envio',
     ];
+
+    public function getAtos(string $search = null)
+    {
+        $atos = $this->where(function ($query) use ($search) {
+            if ($search) {
+                $query->where('classificacao', 'LIKE', "%{$search}%");
+                $query->orWhere('resposta', 'LIKE', "%{$search}%");
+                $query->orWhere('setor', 'LIKE', "%{$search}%");
+                $query->orWhere('ano', 'LIKE', "%{$search}%");
+                $query->orWhere('numero', 'LIKE', "%{$search}%");
+            }
+        })
+            ->paginate(5);
+
+        return $atos;
+    }
 }
