@@ -17,8 +17,6 @@ class AtosController extends Controller
         $this->model = $ato;
     }
 
-
-
     public function index(Request $request)
     {
 
@@ -95,12 +93,10 @@ class AtosController extends Controller
 
     public function criarPDF()
     {
-        $atos = Atos::all();
-        dd($atos);
-        //$pdf = PDF::loadView('index', compact('atos'));
-        //return $pdf->download('atos.pdf');
-        //$pdf = PDF::loadView('atos.index', compact('atos'));
+        // selecting PDF view
+        $pdf = PDF::loadView('index');
 
-        //return $pdf->setPaper('a4')->download('todos_atos.pdf');
+        // download pdf file
+        return $pdf->download('pdfview.pdf');
     }
 }

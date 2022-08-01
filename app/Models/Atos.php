@@ -29,6 +29,7 @@ class Atos extends Model
                 $query->orWhere('setor', 'LIKE', "%{$search}%");
                 $query->orWhere('ano', 'LIKE', "%{$search}%");
                 $query->orWhere('numero', 'LIKE', "%{$search}%");
+                $query->orWhere('data_envio', 'LIKE', "%{$search}%");
             }
         })
             ->paginate(5);

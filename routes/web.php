@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{
     AtosController,
 };
+use Barryvdh\DomPDF\PDF;
 
 Route::put('/{id}', [AtosController::class, 'update'])->name('atos.update');
 Route::get('/edit/{id}', [AtosController::class, 'edit'])->name('atos.edit');
@@ -14,4 +15,4 @@ Route::get('/criar', [AtosController::class, 'criar'])->name('atos.criar');
 Route::post('/cria', [AtosController::class, 'store'])->name('atos.store');
 Route::get('/', [AtosController::class, 'index'])->name('atos.index');
 Route::get('/{id}', [AtosController::class, 'show'])->name('atos.show');
-Route::get('/pdf', [AtosController::class, 'criarPDF']);
+Route::get('/html-pdf', [AtosController::class, 'criarPDF'])->name('atos.pdf');

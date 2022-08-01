@@ -19,10 +19,10 @@
     <div class="card shadow mb-4">
       <div class="card-header py-3">
         <h6 class="m-0 font-weight-bold text-primary">Tabela com as resoluções</h6>
-        <a class="btn btn-primary" href="/pdf">Export to PDF</a>
       </div>
       <div class="card-body">
         <div class="table-responsive">
+          <a href="{!! url('/html-pdf') !!}"> pdf</a>
           <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
             <thead>
               <tr class="text-center">
