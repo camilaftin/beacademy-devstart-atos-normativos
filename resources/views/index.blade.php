@@ -1,5 +1,6 @@
 @include('layout.head')
 
+<td><a href="{{route('atos.pdf')}}">PDF</a></td>
 
 <body>
   @include('layout.navbar')
@@ -22,7 +23,7 @@
       </div>
       <div class="card-body">
         <div class="table-responsive">
-          <a href="{!! url('/html-pdf') !!}"> pdf</a>
+        
           <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
             <thead>
               <tr class="text-center">

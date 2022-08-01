@@ -23,8 +23,11 @@ class AtosController extends Controller
         $atos = $this->model->getAtos(
             $request->search ?? ''
         );
+
         //$atos = Atos::paginate(7);
         return view('index', compact('atos'));
+
+        
     }
 
     public function show($id)
@@ -91,12 +94,14 @@ class AtosController extends Controller
         return redirect()->route('atos.index')->with('success', 'Ato atualizado com sucesso!');
     }
 
-    public function criarPDF()
-    {
-        // selecting PDF view
-        $pdf = PDF::loadView('index');
+    public function downloadPDF(){
+        $atos = Atos::all();
+       
+  
+        $pdf = PDF::loadView('pdf', compact('atos'));
+        
+        //return $pdf->download('invoice.pdf');
+  
+      }
 
-        // download pdf file
-        return $pdf->download('pdfview.pdf');
-    }
 }
