@@ -39,7 +39,7 @@ class StoreUpdateAtosFormRequest extends FormRequest
 
             'ementa' => [
                 'string',
-                'max:500',
+                'max:1500',
             ],
 
             'setor' => [

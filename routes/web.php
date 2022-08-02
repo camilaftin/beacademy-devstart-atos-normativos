@@ -19,4 +19,4 @@ Route::get('/{id}', [AtosController::class, 'show'])->name('atos.show');
 
 Route::get('/pdf/view',[PDFController::class, 'pdfView'])->name('pdf.view');
 
-Route::get('/downloadPDF/convert',[PDFController::class, 'pdfGeneration'])->name('pdf.cpnvert');
+Route::get('/downloadPDF/convert',[PDFController::class, 'pdfGeneration'])->name('pdf.convert');

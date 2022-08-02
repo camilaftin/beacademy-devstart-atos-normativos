@@ -1,17 +1,23 @@
 @include('layout.head')
 
-<td><a href="{{route('atos.pdf')}}">PDF</a></td>
 
 <body>
   @include('layout.navbar')
   <div class="container">
     <!--<h1 class="h4 text-gray-900 mb-4">Lista Resoluções</h1>-->
-    <div class="row">
-      <div class="col-mt-6 mb-5" style="padding: 40px;">
+     <div class="row" style="padding:40px;">    
+     <div class="form-row col-auto">
         <form action="{{route('atos.index')}}" method="get">
           <div class="input-group">
             <input type="search" class="form-control rounded" name="search" placeholder="Procurar" aria-label="Search" aria-describedby="search-addon" />
             <button type="submit" class="btn btn-outline-primary">Procurar</button>
+          </div>
+        </form>
+
+        <form action="{{route('pdf.view')}}" method="get" class="col">
+          <div class="input-group">
+            <input type="search" class="form-control rounded" name="search" placeholder="Texto em PDF" aria-label="Search" aria-describedby="search-addon" />
+            <button type="submit" class="btn btn-outline-dark" name="pdf">PDF</button>
           </div>
         </form>
       </div>
@@ -23,6 +29,7 @@
       </div>
       <div class="card-body">
         <div class="table-responsive">
+        
         
           <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
             <thead>

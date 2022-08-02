@@ -30,7 +30,6 @@
             <tbody>
               @foreach($atos as $ato)
               <tr class="text-center">
-                <td id="image"><img width="100px" height="100px" src="{{ asset('storage/' . $ato->image)}}" class="rounded mx-auto d-block" id="image"> </td>
                 <td>{{ $ato->numero }}</td>
                 <td>{{ $ato->ano }}</td>
                 <td>{{ $ato->ementa }}</td>

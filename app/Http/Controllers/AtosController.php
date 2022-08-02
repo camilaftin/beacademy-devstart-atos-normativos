@@ -20,13 +20,21 @@ class AtosController extends Controller
     public function index(Request $request)
     {
 
+        if(($isSearch = request('search') == true)&&($pdf = request('pdf'))){
+            
+            $atos = $this->model->getAtos(
+                $request->search ?? ''
+            );
+
+            $pdf_view = PDF::loadView('PDF.pdf_convert', compact('atos'));
+            return $pdf_view->download('myPDF.pdf');
+        }
+
         $atos = $this->model->getAtos(
             $request->search ?? ''
         );
 
-        //$atos = Atos::paginate(7);
         return view('index', compact('atos'));
-
         
     }
 
@@ -94,14 +102,10 @@ class AtosController extends Controller
         return redirect()->route('atos.index')->with('success', 'Ato atualizado com sucesso!');
     }
 
-    public function downloadPDF(){
-        $atos = Atos::all();
-       
-  
-        $pdf = PDF::loadView('pdf', compact('atos'));
-        
-        //return $pdf->download('invoice.pdf');
-  
-      }
+    
 
+    
+   
 }
+
+   
