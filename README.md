@@ -43,6 +43,7 @@ Agradeço à Be Academy e a PayLivre pela oportunidade de desenvolvimento do cur
         </sub>
       </a>
     </td>
+</table>
     
 
 
