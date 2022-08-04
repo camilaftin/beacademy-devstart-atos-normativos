@@ -39,7 +39,7 @@ Agradeço à Be Academy e a PayLivre pela oportunidade de desenvolvimento do cur
       <a href="#">
         <img src="https://avatars.githubusercontent.com/camilaftin" width="100px;" alt="Camila no  GitHub"/><br>
         <sub>
-          <b>Iuri Silva</b>
+          <b>Camila F T</b>
         </sub>
       </a>
     </td>
@@ -51,4 +51,4 @@ Agradeço à Be Academy e a PayLivre pela oportunidade de desenvolvimento do cur
 
 Esse projeto está sob licença copyleft.
 
-[⬆ Voltar ao topo](#atos-normativos)<br>
+
