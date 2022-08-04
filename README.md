@@ -8,7 +8,7 @@
 
 <img src="tela.png" alt="tela inicial">
 
-## Como requisito final do projeto DevStart PayLivre junto com a Be Academy é desenvolver um sistema com PHP e Laravel 9, surgiu a ideia de aplicar realmente o que foi aprendido durante o curso, logo a demanda proveniente do decreto 10139/19, na qual todos os atos inferiores a legislação precisam ser revistos e necessitam ter uma classificação o seguinte projeto apresenta uma forma mais fácil de gerenciar a demanda.
+Como requisito final do projeto DevStart PayLivre junto com a Be Academy é desenvolver um sistema com PHP e Laravel 9, surgiu a ideia de aplicar realmente o que foi aprendido durante o curso, logo a demanda proveniente do decreto 10139/19, na qual todos os atos inferiores a legislação precisam ser revistos e necessitam ter uma classificação o seguinte projeto apresenta uma forma mais fácil de gerenciar a demanda.
 
 ### Ajustes e melhorias
 
@@ -37,7 +37,7 @@ Agradeço à Be Academy e a PayLivre pela oportunidade de desenvolvimento do cur
   <tr>
     <td align="center">
       <a href="#">
-        <img src="https://avatars3.githubusercontent.com/u/31936044" width="100px;" alt="Camila no  GitHub"/><br>
+        <img src="https://avatars.githubusercontent.com/camilaftin" width="100px;" alt="Camila no  GitHub"/><br>
         <sub>
           <b>Iuri Silva</b>
         </sub>
@@ -46,12 +46,9 @@ Agradeço à Be Academy e a PayLivre pela oportunidade de desenvolvimento do cur
     
 
 
-## 😄 Seja um dos contribuidores<br>
-
-Quer fazer parte desse projeto? Clique [AQUI](CONTRIBUTING.md) e leia como contribuir.
 
 ## 📝 Licença
 
-Esse projeto está sob licença. Veja o arquivo [LICENÇA](LICENSE.md) para mais detalhes.
+Esse projeto está sob licença copyleft.
 
-[⬆ Voltar ao topo](#nome-do-projeto)<br>
+[⬆ Voltar ao topo](#atos-normativos)<br>
