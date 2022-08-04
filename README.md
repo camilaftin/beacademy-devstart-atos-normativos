@@ -17,6 +17,8 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [x] Inclusão do dashboard para administrador
 - [x] Inclusão do download das imagens
 - [x] Inclusão de cards com quantidades das classificações
+- [x] Inclusão de logs de acesso no banco
+- [x] Inclusão de testes
 
 
 ## 💻 Pré-requisitos
